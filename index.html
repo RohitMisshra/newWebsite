@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        .sliderMain{
+            position: absolute;
+            top: 2000px;
+        }
+
+        #slider {
+          height: 35vw;
+          position: relative;
+          perspective: 1000px;
+          transform-style: preserve-3d;
+        }
+        
+        #slider label {
+          margin: auto;
+          width: 60%;
+          height: 100%;
+          border-radius: 4px;
+          position: absolute;
+          left: 0; right: 0;
+          cursor: pointer;
+          transition: transform 0.5s ease;
+        }
+        
+        #s1:checked ~ #slide4, #s2:checked ~ #slide5,
+        #s3:checked ~ #slide1, #s4:checked ~ #slide2,
+        #s5:checked ~ #slide3 {
+          box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+          transform: translate3d(-30%,0,-200px);
+        }
+        
+        #s1:checked ~ #slide5, #s2:checked ~ #slide1,
+        #s3:checked ~ #slide2, #s4:checked ~ #slide3,
+        #s5:checked ~ #slide4 {
+          box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+          transform: translate3d(-15%,0,-100px);
+        }
+        
+        #s1:checked ~ #slide1, #s2:checked ~ #slide2,
+        #s3:checked ~ #slide3, #s4:checked ~ #slide4,
+        #s5:checked ~ #slide5 {
+          box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+          transform: translate3d(0,0,0);
+        }
+        
+        #s1:checked ~ #slide2, #s2:checked ~ #slide3,
+        #s3:checked ~ #slide4, #s4:checked ~ #slide5,
+        #s5:checked ~ #slide1 {
+          box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+          transform: translate3d(15%,0,-100px);
+        }
+        
+        #s1:checked ~ #slide3, #s2:checked ~ #slide4,
+        #s3:checked ~ #slide5, #s4:checked ~ #slide1,
+        #s5:checked ~ #slide2 {
+          box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+          transform: translate3d(30%,0,-200px);
+        }
+        
+        #slide1 { background: transparent; }
+        #slide2 { background: transparent; }
+        #slide3 { background: transparent; }
+        #slide4 { background: transparent; }
+        #slide5 { background: transparent; }
+        </style>
+</head>
+  <body>
+
+    <!--FB embed-->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0"></script>
+    <!--FB embed close-->
+
+    <row class="nav nav1">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="https://www.iitism.ac.in/about_administration.php" class="nav-link">Administration</a>
+                </li>
+                <span class="align-middle">|</span>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Placements</a>
+                </li>
+                <span class="align-middle">|</span>
+                <li class="nav-item">
+                    <a href="https://www.iitism.ac.in/~dsw/" class="nav-link">Student Welfare</a>
+                </li>
+                <span class="align-middle">|</span>
+                <li class="nav-item">
+                    <a href="http://www.iitismlib.ac.in/" class="nav-link">Infrastructure</a>
+                </li>
+                <span class="align-middle">|</span>
+                <li class="nav-item">
+                    <a href="https://mis.iitism.ac.in/" class="nav-link">Information Systems</a>
+                </li>
+                <span class="align-middle">|</span>
+                <li class="nav-item">
+                    <a href="https://www.iitism.ac.in/iraa/" class="nav-link">International & Alumni Relations</a>
+                </li>
+                <span class="align-middle">|</span>
+                <li class="nav-item">
+                    <a href="https://www.iitism.ac.in/deans/rnd/index.php" class="nav-link">Research & Devalopment</a>
+                </li>
+                <span class="align-middle">|</span>
+                <li class="nav-item">
+                    <a href="https://www.iitism.ac.in/tendernew.php" class="nav-link">Tender</a>
+                </li>
+                <span class="align-middle">|</span>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Webmail</a>
+                </li>
+            </ul>
+        </div>
+    </row>
+
+    <div class="container-fluid nav nav2">
+        <div class="container">
+            <a href="index.html"><img class="mt-1 mb-1 img1" src=" logo.png" alt="logo"></a>
+            <div class="float-right">
+                <ul class="nav">
+                    <li class="align-middle nav-item">
+                        <span class="align-self-center span1">
+                            <a href="https://www.iitism.ac.in/about_overview.php" class="nav-link mt-3">ABOUT US</a>
+                        </span>
+                    </li>
+                    <li class="align-middle nav-item">
+                        <span><p class="nav-link mt-3 px-0">|</p></span>
+                    </li>
+                    <li class="align-middle nav-item">
+                        <span class="align-self-center span1">
+                            <a href="https://www.iitism.ac.in/acad_over.php" class="nav-link mt-3">ACADEMICS</a>
+                        </span>
+                    </li>
+                    <li class="align-middle nav-item">
+                        <span><p class="nav-link mt-3 px-0">|</p></span>
+                    </li>
+                    <li class="align-middle nav-item">
+                        <span class="align-self-center span1">
+                            <a href="https://www.iitism.ac.in/admissions.php" class="nav-link mt-3">ADMISSIONS</a>
+                        </span>
+                    </li>
+                    <li class="align-middle nav-item">
+                            <span><p class="nav-link mt-3 px-0">|</p></span>
+                    </li>
+                    <li class="align-middle nav-item">
+                        <span class="align-self-center span1">
+                            <a href="https://www.iitism.ac.in/campuslife/campus.php" class="nav-link mt-3">CAMPUS LIFE</a>
+                        </span>
+                    </li>
+                    <li class="align-middle nav-item">
+                        <span><p class="nav-link mt-3 px-0">|</p></span>
+                    </li>
+                    <li class="align-middle nav-item">
+                        <span class="align-self-center span1">
+                            <a href="https://www.iitism.ac.in/faculty.php" class="nav-link mt-3">FACULTY</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="film"></div>
+
+    <div class="bg container-fluid">
+        <div class="about d-flex justify-content-center">
+            <div class="aboutContent text-center">
+                <img src=" logo2.png" alt="logo">
+                <h1>MISSION 2026</h1>
+                <h2>Dream Together, Build Together</h2>
+                <p>Explore More..</p>
+                <img class="imgArrowHead" src=" downArrow.png" alt="img">
+            </div>
+        </div>
+    </div>
+
+    <div class="container row1 text-center">
+        <div class="row">
+            <div class="card col-lg-5 align-text-bottom c1">
+                <img src=" bgClg.jpeg" alt="bg">
+                <p class="text-bottom">Independence Day Celebration at IIT ISM Dhanbad.</p>
+            </div>
+            <div class="card col-lg-2">
+                <div class="card innerDiv c2">
+                    <p class="h5">CAMPUS</p>
+                    <p class="h4">EVENTS</p>
+                </div>
+                <div class="card innerDiv c3">
+                    <p class="h4">INNOVATIVE</p>
+                    <p class="h5">INITIATIVES</p>
+                </div>
+            </div>
+            <div class="card col-lg-4 c4">
+                <p class="h4 card-title" style="margin: 0">ANNOUNCEMENTS</p>
+<!--
+                <div class="card cardContent">
+                    <a class="ann1" href="#">Advertisement Notice for walk in interview for the post of coach.</a>
+                    <a class="ann2" href="#">Last date for submission of documents regarding fee waiver.</a>                                
+                </div>
+                <div class="card cardContent hidden">
+                    <a class="ann1" href="#">Advertisement Notice for walk in interview for the post of coach.</a>
+                    <a class="ann2" href="#">Last date for submission of documents regarding fee waiver.</a>                                
+                </div>
+
+-->
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="background-color: white; padding: 10px;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card1 cardContent">
+                            <a class="ann1" href="#">Advertisement Notice for walk in interview for the post of coach.</a>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card1 cardContent">
+                            <a class="ann2" href="#">Last date for submission of documents regarding fee waiver.</a>                                
+                        </div>        
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card1 cardContent">
+                            <a class="ann2" href="#">Walk-in-interview for the post of Research Fellow in Petroleum Engineering on 27.08.2019.</a>                                
+                        </div>        
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card1 cardContent">
+                            <a class="ann2" href="#">Notice of walk-in-interview for Research Fellow Date & Time of interview 27.08.2019 10:00 AM.</a>                                
+                        </div>        
+                    </div>
+                </div>
+            </div>
+                <div class="card-footer">
+                    <a class="seeMore" href="#">See More..</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="highlightsHead text-center h1">IIT ISM HIGHLIGHTS</p>
+    <div class="container row1 text-center margin-topper">
+        <div class="row">
+            <div class="card col-lg-3 c5">
+                <div class="fbContent">
+                    <div class="fb-page" data-href="https://www.facebook.com/IITISMDHNB/" data-tabs="timeline" data-width="300" data-height="230" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/IITISMDHNB/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/IITISMDHNB/">Indian Institute of Technology ISM Dhanbad</a></blockquote></div>
+                </div>
+                <div class="slideUp slider1">
+                    <img class="fbImg" src=" fb.png" alt="fb">
+                    <p class="h3">FACEBOOK</p>
+                    <img class="arrowImg" src=" downArrow.png" alt="img">
+                </div>
+            </div>
+            <div class="card col-lg-3 c6">
+                <div class="twitterContent">
+                    <a class="twitter-timeline" data-height="250px" data-width="300px" href="https://twitter.com/IITISM_DHANBAD?ref_src=twsrc%5Etfw">Tweets by IITISM_DHANBAD</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>                </div>
+                <div class="slideUp slider2">
+                    <img class="twitterImg" src=" twitter.png" alt="twitter">
+                    <p class="h3">TWITTER</p>
+                    <img class="arrowImg" src=" downArrow.png" alt="img">
+                </div>                       
+            </div>
+            <div class="card col-lg-5 c7">
+                <div>
+                    <img class="newsImg1" src=" news1.jpeg" alt="n1">
+                    <img class="hidden newsImg2" src=" news2.jpeg" alt="n2">
+                    <img class="hidden newsImg3" src=" news3.jpeg" alt="n3">
+                    <div class="newsHead">
+                        <p class="h1">MEDIA</p>
+                        <p class="h3">COVERAGE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgGold"></div>
+    <section id="slider"class="text-center">
+        <input type="radio" name="slider" id="s1">
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3" checked>
+        <input type="radio" name="slider" id="s4">
+        <input type="radio" name="slider" id="s5">
+        <label for="s1" id="slide1"><iframe width="90%" height="100%" src="https://www.youtube.com/embed/JWRHy5xZnV4"></iframe></label>
+        <label for="s2" id="slide2"><iframe width="90%" height="100%" src="https://www.youtube.com/embed/LRjmXwA1pOk"></iframe></label>
+        <label for="s3" id="slide3"><iframe width="90%" height="100%" src="https://www.youtube.com/embed/kXAwVodJFbw"></iframe></label>
+        <label for="s4" id="slide4"><iframe width="90%" height="100%" src="https://www.youtube.com/embed/VsA1AXv3mYo"></iframe></label>
+        <label for="s5" id="slide5"><iframe width="90%" height="100%" src="https://www.youtube.com/embed/2PjoLe6yics"></iframe></label>
+    </section>
+
+
+    <!--recent tab
+
+    <div class="research">
+        <div class="row caontainer">
+            <div class="col-lg-5 r">
+                naman
+            </div>
+            <div class="col-lg-5 r r2">
+                naman
+            </div>            
+            <div class="col-lg-4 r r3">
+                naman
+            </div>            
+        </div>
+    </div>
+    -->
+    <!--Footer-->
+
+        
+    <div class="footer container" style="font-size: 13.5px; line-height: 12px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h6>Important Links</h6>
+                    <a href="rti.php"><p>RTI</p></a>
+                    <a href="gender_sensitization.php"><p>Internal Complaints Committee</p></a>
+                    <a href="geo_content.php"><p>Geological Museum</p></a>
+                    <a href="online-payment-link.php"><p>Online Payment Link</p></a>
+                    <a href="https://www.iitism.ac.in/uploads/news_events/admin/Holiday.pdf"><p>List of Holidays</p></a>	
+                    <a href="Anual-Reports/ar.php"><p>Annual Reports</p></a> 
+                    <a href="institute-crest.php"><p>Institute Crest</p></a>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <a href="https://www.iitism.ac.in/pdfs/sip/sip.pdf"><p>Skill Development Programme</p></a>
+                    <a href="nirf_data_old.php"><p>NIRF Data -Old</p></a>
+                    <a href="https://www.iitism.ac.in/pdfs/academics/Procedure-for-student-verification.pdf"><p>Degree/Student Verification</p></a>
+                    <a href="https://www.iitism.ac.in/pdfs/academics/Procedure-for-student-verification.pdf"><p>Transcript</p></a>
+                    <a href="https://www.iitism.ac.in/uploads/news_events/admin/IITISM-STATUTES.pdf"><p>Statute of IIT ISM</p></a> 
+                    <a href="https://www.iitism.ac.in//uploads/news_events/admin/11-07-2019-03:07:23_notices.pdf"><p>FEE OF FOREIGN STUDENTS</p></a> 
+                    <a href="https://www.iitism.ac.in//uploads/news_events/admin/28-07-2019-11:07:10_notices.pdf"><p>Digital Life Certificate</p></a>                         
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links..</h6>
+                    <a href="https://www.iitism.ac.in/pdfs/institute/Asset.pdf"><p>Assets</p></a>
+                    <a href="https://www.iitism.ac.in/pdfs/institute/List-of-Hospitals.pdf"><p>List of Hospitals</p></a>
+                    <a href="https://www.iitism.ac.in/pdfs/dean/faculty/Faculty-Hand-Book.pdf"><p>Faculty Hand Book</p></a>
+                    <a href="forms-rules-student.php"><p>Forms and Rules Students</p></a>
+                    <a href="forms-rules-emp.php"><p>Forms and Rules Employees</p></a> 
+                </div>
+                <!--<div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <a href="#"><p>Contribute</p></a>
+                    <a href="#"><p>Publications</p></a>
+                    <a href="#"><p>Alumni in News</p></a>
+                    <a href="#"><p>Notable in Alumni</p></a>
+                    <a href="#"><p>IRAA Office</p></a>
+                </div>
+                <div class="col-md-3">
+                    <h6>Explore</h6>
+                    <a href="https://www.iitism.ac.in/iraa/"><p>International Relations</p></a>
+                
+                    <a href="#"><p>Societal Missions</p></a>
+                    <a href="#"><p>Innovation and Incubation</p></a>
+                    
+                </div>		 -->
+                <div class="col-md-3">
+                    <h6>Contact Us</h6>
+                    <p style="line-height: 2">Main Campus
+                    IIT (ISM), Dhanbad
+                    Jharkhand, INDIA, 826004
+                    <a href="https://www.iitism.ac.in/pdfs/telephone_directory/TD.pdf"><p>Telephone Directory</p></a>
+                    </p>
+                    <div>
+                        <a href="https://www.facebook.com/IITISMDHNB" class="fa fa-facebook"></a>
+                        <a href="https://twitter.com/iitism_dhanbad" class="fa fa-twitter"></a>
+                        <!--	<a href="#" class="fa fa-linkedin"></a>-->
+                    </div>
+                </div>
+            </div>
+            <p class="text-center" style="padding-top: 10px;"><small>&copy; IIT (ISM) All Rights Reserved</small></p>
+        </div>
+    </div>
+             
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
