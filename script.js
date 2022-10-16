@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
     /* Black Film */
-
+#add function groups like all hide in one function, all event functions to make code readable
     $(".aboutContent").hide();
     
     $(".film").mouseenter(function(){
